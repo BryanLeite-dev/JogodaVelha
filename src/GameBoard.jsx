@@ -76,6 +76,14 @@ function GameBoard({ players, gameMode, onBackToStart }) {
     setIsPlayerTurn(true); 
   };
 
+  const resetScore = () => {
+    setBoard(Array(9).fill(null));
+    setWinner(null);
+    setIsPlayerTurn(true); 
+    scores.X =  0;
+    scores.O =  0;
+  };
+
   return (
     <div className="game-board">
       <button onClick={onBackToStart}>Voltar</button>
@@ -97,6 +105,7 @@ function GameBoard({ players, gameMode, onBackToStart }) {
         </div>
       )}
       <button onClick={resetGame}>Recomeçar Jogo</button>
+      <button onClick={resetScore}>Resetar Placar</button>
     </div>
   );
 }
