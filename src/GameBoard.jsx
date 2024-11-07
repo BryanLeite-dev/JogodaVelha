@@ -86,10 +86,12 @@ function GameBoard({ players, gameMode, onBackToStart }) {
 
   return (
     <div className="game-board">
-      <button onClick={onBackToStart}>Voltar</button>
+      <button className="left" onClick={onBackToStart}>Voltar</button>
       <h2>Jogo da Velha</h2>
+      <br></br>
       <div className="scores">
         <p>Pontuação {players.player1}: {scores.X}</p>
+        <br></br>
         <p>Pontuação {players.player2}: {scores.O}</p>
       </div>
       <div className="board">
