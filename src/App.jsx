@@ -40,33 +40,46 @@ function App() {
       {gameMode === null && (
         <div className="start-screen">
           <h1>Jogo da Velha</h1>
+          <br></br>
           <p>Escolha o modo de jogo:</p>
-          <button onClick={handleSinglePlayerClick}>1 jogador</button>
-          <button onClick={handleTwoPlayerClick}>2 jogadores</button>
+          <div className="jogadores">
+            <div className="flex">
+
+              <button className="jogadores-flex" onClick={handleSinglePlayerClick}>1 jogador</button>
+              <button className="jogadores-flex" onClick={handleTwoPlayerClick}>2 jogadores</button>
+            </div>
+          </div>
         </div>
       )}
-      
+
       {gameMode === 'single' && (
         <div className="name-input-screen">
-          <h2>Jogo da Velha</h2>
-          <label>
-            Nome do Jogador:
-            <input
-              type="text"
-              value={playerName1}
-              onChange={(e) => setPlayerName1(e.target.value)}
-              placeholder="Digite o nome"
-            />
-          </label>
-          <div>
-            <label>
-              Escolha seu símbolo:
-              <select value={playerSymbol} onChange={(e) => setPlayerSymbol(e.target.value)}>
-                <option value="X">X</option>
-                <option value="O">O</option>
-              </select>
-            </label>
+          <h1>Jogo da Velha</h1>
+          <br></br>
+          <div className="bloco-jogadores">
+            <div className="jogador">
+              <label>
+                Nome do Jogador:
+                <input
+                  type="text"
+                  value={playerName1}
+                  onChange={(e) => setPlayerName1(e.target.value)}
+                  placeholder="Digite o nome"
+                />
+              </label>
+              <div>
+                <br></br>
+                <label>
+                  Escolha seu símbolo:
+                  <select value={playerSymbol} onChange={(e) => setPlayerSymbol(e.target.value)}>
+                    <option value="X">X</option>
+                    <option value="O">O</option>
+                  </select>
+                </label>
+              </div>
+            </div>
           </div>
+          <br></br>
           <button onClick={handleStartSinglePlayerGame}>Jogar!</button>
           <button onClick={handleBackToStart}>Voltar</button>
         </div>
@@ -97,7 +110,7 @@ function App() {
           <button onClick={handleBackToStart}>Voltar</button>
         </div>
       )}
-      
+
       {(gameMode === 'playSingle' || gameMode === 'two') && (
         <GameBoard
           players={players}

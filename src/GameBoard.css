@@ -1,9 +1,18 @@
+.game-board{
+  background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    color: #000;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
     gap: 5px;
-    margin: 20px auto;
+    margin: 43.5px ;
   }
   
   .cell {
@@ -13,11 +22,17 @@
     font-size: 2rem;
     cursor: pointer;
     background-color: #eee;
-    border: 1px solid #333;
+    border: 1px solid #70519c;
+    border-radius: 16px;
   }
   
   .winner {
     margin-top: 20px;
     font-size: 1.5rem;
   }
-  
+
+.left{
+    position: absolute;
+    margin-top: -1%;
+    margin-left: -49%;
+  }
